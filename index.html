@@ -353,6 +353,26 @@
           contínua.
         </p>
       </div>
+      <!-- Experiência do Usuário -->
+      <div class="card clickable" id="experiencia-usuario-card">
+        <h2><i class="fas fa-user-check"></i>Experiência do Usuário</h2>
+        <p>
+          <strong>Antes:</strong> Dificuldades no acesso digital, falta de
+          conhecimento e equipamentos limitados.
+        </p>
+        <p>
+          <strong>Durante:</strong> Capacitação prática em espaços comunitários,
+          suporte técnico personalizado e aprendizado colaborativo.
+        </p>
+        <p>
+          <strong>Após:</strong> Autonomia digital conquistada, acesso
+          facilitado a serviços públicos e integração à economia digital.
+        </p>
+        <button class="card-button" id="jornada-button">
+          <i class="fas fa-route"></i>
+          Ver Jornada
+        </button>
+      </div>
     </div>
     <div class="footer">
       &copy; 2025 - Projeto Inclusão Digital Recife • Todos os direitos
@@ -370,61 +390,109 @@
       </div>
     </div>
 
-    <script>
-      // Elementos do modal
-      const modal = document.getElementById("grafico-modal");
-      const card = document.getElementById("analise-dados-card");
-      const cardButton = document.querySelector(".card-button");
-      const closeBtn = document.querySelector(".close");
+    <!-- Modal Jornada do Usuário -->
+    <div id="jornada-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img
+          src="Jornada_do_usuario.png"
+          alt="Jornada do Usuário - Experiência de Inclusão Digital"
+        />
+      </div>
+    </div>
 
-      // Função para abrir modal
-      function openModal() {
-        modal.style.display = "flex";
-        // Pequeno delay para permitir a transição
+    <script>
+      // Elementos do modal do gráfico
+      const graficoModal = document.getElementById("grafico-modal");
+      const analiseCard = document.getElementById("analise-dados-card");
+      const graficoButton = document.querySelector(".card-button");
+      const graficoCloseBtn = graficoModal.querySelector(".close");
+
+      // Elementos do modal da jornada
+      const jornadaModal = document.getElementById("jornada-modal");
+      const experienciaCard = document.getElementById(
+        "experiencia-usuario-card"
+      );
+      const jornadaButton = document.getElementById("jornada-button");
+      const jornadaCloseBtn = jornadaModal.querySelector(".close");
+
+      // Função para abrir modal do gráfico
+      function openGraficoModal() {
+        graficoModal.style.display = "flex";
         setTimeout(() => {
-          modal.classList.add("show");
+          graficoModal.classList.add("show");
         }, 10);
       }
 
-      // Abrir modal ao clicar no card
-      card.addEventListener("click", function (event) {
-        // Evitar duplo clique se clicar no botão
-        if (!event.target.closest(".card-button")) {
-          openModal();
-        }
-      });
+      // Função para abrir modal da jornada
+      function openJornadaModal() {
+        jornadaModal.style.display = "flex";
+        setTimeout(() => {
+          jornadaModal.classList.add("show");
+        }, 10);
+      }
 
-      // Abrir modal ao clicar no botão
-      cardButton.addEventListener("click", function (event) {
-        event.stopPropagation(); // Evitar propagação para o card
-        openModal();
-      });
-
-      // Fechar modal ao clicar no X
-      closeBtn.addEventListener("click", function () {
+      // Função para fechar modal
+      function closeModal(modal) {
         modal.classList.remove("show");
         setTimeout(() => {
           modal.style.display = "none";
         }, 300);
-      });
+      }
 
-      // Fechar modal ao clicar fora da imagem
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-          modal.classList.remove("show");
-          setTimeout(() => {
-            modal.style.display = "none";
-          }, 300);
+      // Eventos do modal do gráfico
+      analiseCard.addEventListener("click", function (event) {
+        if (!event.target.closest(".card-button")) {
+          openGraficoModal();
         }
       });
 
-      // Fechar modal com tecla Escape
+      graficoButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        openGraficoModal();
+      });
+
+      graficoCloseBtn.addEventListener("click", function () {
+        closeModal(graficoModal);
+      });
+
+      graficoModal.addEventListener("click", function (event) {
+        if (event.target === graficoModal) {
+          closeModal(graficoModal);
+        }
+      });
+
+      // Eventos do modal da jornada
+      experienciaCard.addEventListener("click", function (event) {
+        if (!event.target.closest(".card-button")) {
+          openJornadaModal();
+        }
+      });
+
+      jornadaButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        openJornadaModal();
+      });
+
+      jornadaCloseBtn.addEventListener("click", function () {
+        closeModal(jornadaModal);
+      });
+
+      jornadaModal.addEventListener("click", function (event) {
+        if (event.target === jornadaModal) {
+          closeModal(jornadaModal);
+        }
+      });
+
+      // Fechar modais com tecla Escape
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && modal.classList.contains("show")) {
-          modal.classList.remove("show");
-          setTimeout(() => {
-            modal.style.display = "none";
-          }, 300);
+        if (event.key === "Escape") {
+          if (graficoModal.classList.contains("show")) {
+            closeModal(graficoModal);
+          }
+          if (jornadaModal.classList.contains("show")) {
+            closeModal(jornadaModal);
+          }
         }
       });
     </script>
