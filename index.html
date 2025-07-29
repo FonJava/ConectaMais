@@ -223,6 +223,95 @@
       .card-button:hover i {
         transform: translateX(3px);
       }
+
+      /* Card destacado para conecta.html */
+      .featured-card {
+        background: linear-gradient(135deg, #0984e3, #74b9ff);
+        color: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(9, 132, 227, 0.3);
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        grid-column: 1 / -1;
+        margin-bottom: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .featured-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
+        opacity: 0;
+      }
+
+      .featured-card:hover::before {
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+
+      .featured-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(9, 132, 227, 0.4);
+      }
+
+      .featured-card h2 {
+        font-size: 2.2rem;
+        margin: 0 0 1rem;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .featured-card p {
+        font-size: 1.1rem;
+        margin: 0 0 1.5rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .featured-button {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+      }
+
+      .featured-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .featured-button i {
+        font-size: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .featured-button:hover i {
+        transform: translateX(5px);
+      }
     </style>
   </head>
   <body>
@@ -232,6 +321,23 @@
       <p>Anthony Guerra, Gabriel Leão e Raphael Silvestre</p>
     </header>
     <div class="container">
+      <!-- Card Destacado para Conecta -->
+      <div class="featured-card" onclick="window.location.href='conecta.html'">
+        <h2><i class="fas fa-wifi"></i> Como Se Conectar</h2>
+        <p>
+          Descubra como acessar internet gratuita e superar a exclusão digital
+          no Recife
+        </p>
+        <a
+          href="conecta.html"
+          class="featured-button"
+          onclick="event.stopPropagation()"
+        >
+          <i class="fas fa-arrow-right"></i>
+          Acessar Guia
+        </a>
+      </div>
+
       <!-- Relato -->
       <div class="card">
         <h2><i class="fas fa-book-open"></i>Relato</h2>

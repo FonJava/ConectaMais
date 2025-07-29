@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Como Se Conectar - Inclusão Digital Recife</title>
+    <!-- Font Awesome para ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f0f4f8;
+        color: #2d3436;
+      }
+      header {
+        background: #0984e3;
+        color: #fff;
+        padding: 2.5rem 1rem;
+        text-align: center;
+        position: relative;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.8rem;
+      }
+      header p.subtitulo {
+        margin: 0.5rem 0 0;
+        font-size: 1.2rem;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h2 {
+        font-size: 1.6rem;
+        margin: 0 0 0.5rem;
+        color: #0984e3;
+        display: flex;
+        align-items: center;
+      }
+      .card h2 i {
+        margin-right: 0.5rem;
+        font-size: 1.3rem;
+      }
+      .card p,
+      .card ul {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .card ul {
+        padding-left: 1.2rem;
+        margin: 0.5rem 0;
+      }
+      .card a {
+        color: #0984e3;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .footer {
+        text-align: center;
+        padding: 1rem;
+        background: #dfe6e9;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      /* Botão Voltar */
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #0984e3;
+        border: 2px solid #0984e3;
+        border-radius: 50px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+        z-index: 1000;
+      }
+
+      .back-button:hover {
+        background: #0984e3;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(9, 132, 227, 0.3);
+      }
+
+      .back-button i {
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+      }
+
+      .back-button:hover i {
+        transform: translateX(-3px);
+      }
+
+      /* Ajustar header para não sobrepor o botão */
+      header {
+        background: #0984e3;
+        color: #fff;
+        padding: 3rem 1rem 2.5rem;
+        text-align: center;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botão Voltar -->
+    <a href="index.html" class="back-button">
+      <i class="fas fa-arrow-left"></i>
+      Voltar
+    </a>
+
+    <header>
+      <h1><i class="fas fa-wifi"></i> Como Se Conectar</h1>
+      <p class="subtitulo">Guia para Populações Vulneráveis</p>
+    </header>
+    <div class="container">
+      <!-- Malefícios -->
+      <div class="card">
+        <h2>
+          <i class="fas fa-exclamation-triangle"></i>Malefícios da Exclusão
+          Digital
+        </h2>
+        <ul>
+          <li>Sem acesso a pagamentos instantâneos (Pix) ou banco digital.</li>
+          <li>
+            Dificuldade em usar serviços públicos: Gov.br, agendamento de
+            documentos e benefícios.
+          </li>
+          <li>Barreiras ao ensino remoto e pesquisa escolar.</li>
+          <li>Limitação no mercado de trabalho e oportunidades online.</li>
+          <li>
+            Isolamento social e falta de acesso a informações de saúde e
+            telemedicina.
+          </li>
+        </ul>
+      </div>
+      <!-- O que fazer -->
+      <div class="card">
+        <h2><i class="fas fa-lightbulb"></i>O Que Você Pode Fazer</h2>
+        <ul>
+          <li>
+            Visite os
+            <a
+              href="https://www2.recife.pe.gov.br/servico/wifi-conecta-recife"
+              target="_blank"
+              >Pontos de Wi-Fi do Conecta Recife</a
+            >.
+          </li>
+          <li>Participe de lan houses comunitárias mapeadas pelo programa.</li>
+          <li>
+            Baixe aplicativos de Wi-Fi comunitário, como Instabridge ou WiFi
+            Map.
+          </li>
+          <li>
+            Procure grupos locais e ONGs que oferecem cursos de informática
+            básica.
+          </li>
+          <li>
+            Use bibliotecas públicas e CRAS que possuem computadores com
+            internet.
+          </li>
+        </ul>
+      </div>
+      <!-- Conecta Recife -->
+      <div class="card">
+        <h2><i class="fas fa-hands-helping"></i>Conecta Recife</h2>
+        <p>
+          O programa oficial da Prefeitura do Recife que leva internet gratuita
+          a comunidades:
+        </p>
+        <ul>
+          <li>
+            <strong>Pontos de Wi-Fi:</strong> 137 locais com conexão gratuita —
+            <a
+              href="https://www2.recife.pe.gov.br/servico/wifi-conecta-recife"
+              target="_blank"
+              >Veja o mapa</a
+            >.
+          </li>
+          <li>
+            <strong>Lan Houses:</strong> Rede de lan houses comunitárias
+            parceiras em CRAS e escolas.
+          </li>
+          <li>
+            <strong>Aplicativo Conecta Recife:</strong> Solicite serviços,
+            localize pontos e acompanhe ações (<a
+              href="https://play.google.com/store/apps/details?id=br.gov.pe.recife.conecta"
+              target="_blank"
+              >Android</a
+            >).
+          </li>
+          <li>
+            <strong>Outros Serviços:</strong> Apoio social, cursos e capacitação
+            digital em parceria com a Secretaria de Assistência Social.
+          </li>
+        </ul>
+      </div>
+      <!-- Ferramentas -->
+      <div class="card">
+        <h2><i class="fas fa-tools"></i>Ferramentas Úteis</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.wifimap.io/pt/32-brazil/176-recife"
+              target="_blank"
+              >WiFi Map</a
+            >
+            — Mapa colaborativo de hotspots gratuitos.
+          </li>
+          <li>
+            <a href="https://instabridge.com" target="_blank">Instabridge</a> —
+            App crowdsourced de redes Wi-Fi.
+          </li>
+          <li>
+            Plataformas de cursos gratuitos: Coursera, Khan Academy e Escola
+            Virtual de Governo.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2025 - Projeto Inclusão Digital Recife • Todos os direitos
+      reservados
+    </div>
+  </body>
+</html>
