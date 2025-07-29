@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relato e Propostas - Inclusão Digital Recife</title>
+    <title>ConectaMais - Inclusão Digital Recife</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230984e3'%3E%3Cpath d='M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.07 2.93 1 9zm8 8l3 3 3-3c-1.66-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.86 9.14 5 13z'/%3E%3C/svg%3E"
+    />
     <!-- Font Awesome para ícones -->
     <link
       rel="stylesheet"
@@ -24,12 +30,6 @@
         text-align: center;
         position: relative;
       }
-      header img.logo {
-        width: 80px;
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-      }
       header h1 {
         margin: 0;
         font-size: 2.8rem;
@@ -46,182 +46,12 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 2rem;
       }
-      .card {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.2s;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-      }
-      .card h2 {
-        font-size: 1.6rem;
-        margin: 0 0 0.5rem;
-        color: #0984e3;
-        display: flex;
-        align-items: center;
-      }
-      .card h2 i {
-        margin-right: 0.5rem;
-        font-size: 1.3rem;
-      }
-      .card p,
-      .card ul {
-        flex: 1;
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-      .card ul {
-        padding-left: 1.2rem;
-        margin: 0.5rem 0;
-      }
       .footer {
         text-align: center;
         padding: 1rem;
         background: #dfe6e9;
         font-size: 0.9rem;
         margin-top: 2rem;
-      }
-
-      /* Modal Styles */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-      }
-
-      .modal.show {
-        display: flex;
-        opacity: 1;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .modal-content {
-        position: relative;
-        max-width: 90%;
-        max-height: 90%;
-        margin: auto;
-        transform: scale(0.7) rotate(-5deg);
-        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        animation: modalSlideIn 0.5s ease-out forwards;
-      }
-
-      .modal.show .modal-content {
-        transform: scale(1) rotate(0deg);
-      }
-
-      .modal-content img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease;
-      }
-
-      .modal-content img:hover {
-        transform: scale(1.02);
-      }
-
-      .close {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        color: #fff;
-        font-size: 35px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: #ff6b6b;
-        transform: rotate(180deg) scale(1.1);
-      }
-
-      @keyframes modalSlideIn {
-        0% {
-          transform: scale(0.7) rotate(-5deg) translateY(50px);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.05) rotate(0deg) translateY(-10px);
-        }
-        100% {
-          transform: scale(1) rotate(0deg) translateY(0);
-          opacity: 1;
-        }
-      }
-
-      /* Cursor pointer for clickable card */
-      .card.clickable {
-        cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-
-      .card.clickable:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Botão do Card */
-      .card-button {
-        background: linear-gradient(135deg, #0984e3, #74b9ff);
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 1rem;
-        align-self: flex-start;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 10px rgba(9, 132, 227, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .card-button:hover {
-        background: linear-gradient(135deg, #74b9ff, #0984e3);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(9, 132, 227, 0.4);
-      }
-
-      .card-button:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(9, 132, 227, 0.3);
-      }
-
-      .card-button i {
-        font-size: 0.8rem;
-        transition: transform 0.3s ease;
-      }
-
-      .card-button:hover i {
-        transform: translateX(3px);
       }
 
       /* Card destacado para conecta.html */
@@ -338,269 +168,26 @@
         </a>
       </div>
 
-      <!-- Relato -->
-      <div class="card">
-        <h2><i class="fas fa-book-open"></i>Relato</h2>
+      <!-- Card Destacado para Informações -->
+      <div class="featured-card" onclick="window.location.href='guia.html'">
+        <h2><i class="fas fa-info-circle"></i> Informações Completas</h2>
         <p>
-          A exclusão digital persiste em áreas periféricas do Recife. Programas
-          como Conecta Recife não alcançam todos os bairros, deixando
-          comunidades vulneráveis sem acesso estável à internet e sem
-          equipamentos em escolas, CRAS e postos de saúde. Isso prejudica
-          alunos, dificulta acesso a serviços públicos e isola comunidades do
-          universo digital.
+          Explore análises detalhadas, dados e propostas para inclusão digital
+          no Recife
         </p>
-      </div>
-      <!-- Desafio -->
-      <div class="card">
-        <h2><i class="fas fa-question-circle"></i>Desafio</h2>
-        <p>
-          <strong
-            >Como ampliar o acesso à conectividade e à internet de qualidade
-            para populações vulneráveis do Recife?</strong
-          >
-          A solução requer políticas públicas, distribuição de equipamentos,
-          capacitação digital e redes comunitárias.
-        </p>
-      </div>
-      <!-- Conceitos-Chave -->
-      <div class="card">
-        <h2><i class="fas fa-lightbulb"></i>Conceitos-Chave</h2>
-        <ul>
-          <li>Inclusão Digital</li>
-          <li>Conectividade Urbana</li>
-          <li>Wi-Fi Público</li>
-          <li>Desigualdade Digital</li>
-          <li>Infraestrutura Tecnológica</li>
-          <li>ODS 9 – Indústria, Inovação e Infraestrutura</li>
-        </ul>
-      </div>
-      <!-- Relação Entre Elementos -->
-      <div class="card">
-        <h2><i class="fas fa-network-wired"></i>Relação Entre Elementos</h2>
-        <p>
-          Inclusão digital depende de sinergia entre conectividade pública e
-          privada, disponibilidade de aparelhos, ações governamentais e
-          alfabetização digital. A falta de dispositivos e de conhecimento em
-          serviços digitais agrava a exclusão.
-        </p>
-      </div>
-      <!-- Atores Interessados -->
-      <div class="card">
-        <h2><i class="fas fa-users"></i>Atores Interessados</h2>
-        <ul>
-          <li>Prefeitura do Recife</li>
-          <li>
-            Secretarias Municipais (Educação, Ciência e Tecnologia, Assistência
-            Social)
-          </li>
-          <li>Empresas de Telecomunicação</li>
-          <li>ONGs e Coletivos Locais</li>
-          <li>Estudantes e Professores</li>
-          <li>Governo Federal e Anatel</li>
-        </ul>
-      </div>
-      <!-- Sessão de Cocriação -->
-      <div class="card">
-        <h2><i class="fas fa-comments"></i>Sessão de Cocriação</h2>
-        <ul>
-          <li>
-            Salas de informática e lan houses comunitárias em CRAS e escolas
-          </li>
-          <li>Doação e reaproveitamento de equipamentos eletrônicos</li>
-          <li>Aulas práticas de informática</li>
-          <li>Hackathons e oficinas de soluções locais</li>
-          <li>Pontos de acesso solar sustentáveis</li>
-          <li>Roteadores Wi-Fi em transportes escolares</li>
-        </ul>
-      </div>
-      <!-- Modelo de Processo de Negócio -->
-      <div class="card">
-        <h2><i class="fas fa-cogs"></i>Modelo de Processo de Negócio</h2>
-        <ol>
-          <li>Mapeamento de vulnerabilidade social (IBGE)</li>
-          <li>Audiências públicas e escuta ativa</li>
-          <li>Parcerias com empresas e operadoras</li>
-          <li>Campanhas de doação e capacitação</li>
-          <li>Implantação de espaços digitais comunitários</li>
-        </ol>
-      </div>
-      <!-- Análise de Dados -->
-      <div class="card clickable" id="analise-dados-card">
-        <h2><i class="fas fa-chart-bar"></i>Análise de Dados</h2>
-        <p>
-          Dados do Relatório Municipal da Anatel mostram evolução da velocidade
-          média de internet em Pernambuco (2022–2025). O Sertão do São Francisco
-          saltou de 16 Mbps para 160 Mbps; a Região Metropolitana atingiu ~90
-          Mbps; o Sertão genérico cresceu para ~52 Mbps.
-        </p>
-        <button class="card-button">
-          <i class="fas fa-chart-line"></i>
-          Ver Gráfico
-        </button>
-      </div>
-      <!-- Resultados das Análises -->
-      <div class="card">
-        <h2><i class="fas fa-check-circle"></i>Resultados das Análises</h2>
-        <ul>
-          <li>Avanços na infraestrutura, porém desiguais</li>
-          <li>Políticas específicas reduzem exclusão em áreas remotas</li>
-          <li>Disparidades persistem, exigindo expansão contínua</li>
-          <li>Melhor velocidade viabiliza ensino remoto de qualidade</li>
-          <li>Necessidade de metas regionais e monitoramento</li>
-        </ul>
-      </div>
-      <!-- Conecta Comunidade -->
-      <div class="card">
-        <h2><i class="fas fa-hand-holding-heart"></i>Conecta Comunidade</h2>
-        <p>
-          Modelo de comunidade de prática baseado em trocas locais, aprendizado
-          entre pares e empoderamento digital. Espaços públicos adaptados (CRAS,
-          escolas, bibliotecas) para capacitação culturalmente relevante e
-          contínua.
-        </p>
-      </div>
-      <!-- Experiência do Usuário -->
-      <div class="card clickable" id="experiencia-usuario-card">
-        <h2><i class="fas fa-user-check"></i>Experiência do Usuário</h2>
-        <p>
-          <strong>Antes:</strong> Dificuldades no acesso digital, falta de
-          conhecimento e equipamentos limitados.
-        </p>
-        <p>
-          <strong>Durante:</strong> Capacitação prática em espaços comunitários,
-          suporte técnico personalizado e aprendizado colaborativo.
-        </p>
-        <p>
-          <strong>Após:</strong> Autonomia digital conquistada, acesso
-          facilitado a serviços públicos e integração à economia digital.
-        </p>
-        <button class="card-button" id="jornada-button">
-          <i class="fas fa-route"></i>
-          Ver Jornada
-        </button>
+        <a
+          href="guia.html"
+          class="featured-button"
+          onclick="event.stopPropagation()"
+        >
+          <i class="fas fa-arrow-right"></i>
+          Ver Detalhes
+        </a>
       </div>
     </div>
     <div class="footer">
       &copy; 2025 - Projeto Inclusão Digital Recife • Todos os direitos
       reservados
     </div>
-
-    <!-- Modal -->
-    <div id="grafico-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img
-          src="grafico.png"
-          alt="Gráfico - Evolução da Velocidade de Internet em Pernambuco"
-        />
-      </div>
-    </div>
-
-    <!-- Modal Jornada do Usuário -->
-    <div id="jornada-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img
-          src="Jornada_do_usuario.png"
-          alt="Jornada do Usuário - Experiência de Inclusão Digital"
-        />
-      </div>
-    </div>
-
-    <script>
-      // Elementos do modal do gráfico
-      const graficoModal = document.getElementById("grafico-modal");
-      const analiseCard = document.getElementById("analise-dados-card");
-      const graficoButton = document.querySelector(".card-button");
-      const graficoCloseBtn = graficoModal.querySelector(".close");
-
-      // Elementos do modal da jornada
-      const jornadaModal = document.getElementById("jornada-modal");
-      const experienciaCard = document.getElementById(
-        "experiencia-usuario-card"
-      );
-      const jornadaButton = document.getElementById("jornada-button");
-      const jornadaCloseBtn = jornadaModal.querySelector(".close");
-
-      // Função para abrir modal do gráfico
-      function openGraficoModal() {
-        graficoModal.style.display = "flex";
-        setTimeout(() => {
-          graficoModal.classList.add("show");
-        }, 10);
-      }
-
-      // Função para abrir modal da jornada
-      function openJornadaModal() {
-        jornadaModal.style.display = "flex";
-        setTimeout(() => {
-          jornadaModal.classList.add("show");
-        }, 10);
-      }
-
-      // Função para fechar modal
-      function closeModal(modal) {
-        modal.classList.remove("show");
-        setTimeout(() => {
-          modal.style.display = "none";
-        }, 300);
-      }
-
-      // Eventos do modal do gráfico
-      analiseCard.addEventListener("click", function (event) {
-        if (!event.target.closest(".card-button")) {
-          openGraficoModal();
-        }
-      });
-
-      graficoButton.addEventListener("click", function (event) {
-        event.stopPropagation();
-        openGraficoModal();
-      });
-
-      graficoCloseBtn.addEventListener("click", function () {
-        closeModal(graficoModal);
-      });
-
-      graficoModal.addEventListener("click", function (event) {
-        if (event.target === graficoModal) {
-          closeModal(graficoModal);
-        }
-      });
-
-      // Eventos do modal da jornada
-      experienciaCard.addEventListener("click", function (event) {
-        if (!event.target.closest(".card-button")) {
-          openJornadaModal();
-        }
-      });
-
-      jornadaButton.addEventListener("click", function (event) {
-        event.stopPropagation();
-        openJornadaModal();
-      });
-
-      jornadaCloseBtn.addEventListener("click", function () {
-        closeModal(jornadaModal);
-      });
-
-      jornadaModal.addEventListener("click", function (event) {
-        if (event.target === jornadaModal) {
-          closeModal(jornadaModal);
-        }
-      });
-
-      // Fechar modais com tecla Escape
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          if (graficoModal.classList.contains("show")) {
-            closeModal(graficoModal);
-          }
-          if (jornadaModal.classList.contains("show")) {
-            closeModal(jornadaModal);
-          }
-        }
-      });
-    </script>
   </body>
 </html>
